@@ -20,8 +20,8 @@ function App() {
         <Shape />
         <Header />
         <Hero />
-        {/* <Companies /> */}
-        {/* {/* <Hero2 /> */}
+        <Companies />
+        <Hero2 />
         <Hero3 /> 
         <Hero4 />
         <Hero5 />
