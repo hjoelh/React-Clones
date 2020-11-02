@@ -26,6 +26,7 @@ justify-content: space-around;
 margin: 0 auto;
 margin-bottom: 160px;
 svg {
-  margin: 28px;
+  margin: 25px 0px;
 }
+
 `

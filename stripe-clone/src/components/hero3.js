@@ -81,11 +81,11 @@ export default function Hero3() {
 
           </HeroText>
 
-<HeroText> 
+<HeroText2>
 
           <Img src={code} alt="code" />
           
-          </HeroText>
+          </HeroText2>
        
       </Container>
     </Background>
@@ -126,6 +126,9 @@ const H2 = styled.h2`
   font-weight: 500;
   color: white;
   width: 90%;
+  @media (max-width: 599px) {
+    width: 100%;
+  }
 `;
 
 const Text = styled.p`
@@ -161,11 +164,23 @@ const TextBoxContainer = styled.div`
   margin: 50px 0;
   width: 100%;
   display: flex;
+ 
 `;
 
 const HeroText = styled.div`
   width: 50%;
   position: relative;
+  @media (max-width: 599px) {
+    width: 100%;
+  }
+`;
+
+const HeroText2 = styled.div`
+  width: 50%;
+  position: relative;
+  @media (max-width: 599px) {
+    display: none;
+  }
 `;
 
 const Img = styled.img`
@@ -187,6 +202,7 @@ const Background = styled.div`
   width: 100%;
   background-color: #0a2540;
   clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
+
 `;
 
 const Arrow = styled.svg`

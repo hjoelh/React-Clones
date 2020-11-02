@@ -1,7 +1,7 @@
 import React from "react";
 import Companies from "./components/companies";
 import Footer from "./components/footer";
-import ClientGrid from "./components/ClientGrid";
+import BackgroundGrid from "./components/BackgroundGrid";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Hero2 from "./components/hero2";
@@ -16,13 +16,13 @@ function App() {
   return (
     <div className="App">
       <IconContext.Provider value={{ size: "1.9em" }}>
-        <ClientGrid />
+        <BackgroundGrid />
         <Shape />
         <Header />
         <Hero />
         <Companies />
         <Hero2 />
-        <Hero3 /> 
+        <Hero3 />
         <Hero4 />
         <Hero5 />
         <Hero6 />

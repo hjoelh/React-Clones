@@ -234,6 +234,127 @@ export function DropDownMenu3() {
   );
 }
 
+export function DropDownMenuMini() {
+  return (
+    <DropDown4>
+      <DropContainer4>
+        <div>
+        <h3>PRODUCTS</h3>
+
+          <h2>
+            <span><IoMdCheckboxOutline /></span> 
+          Payments
+          </h2>
+
+          <h2>
+           <span><IoIosPerson /></span> 
+           Billing
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Payouts
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Radar
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Atlas
+          </h2>
+        </div>
+
+        <div>
+          <h2>
+           <span><IoIosPersonAdd /></span>  
+           Terminal
+          </h2>
+
+          <h2>
+            <span><IoIosPaper /></span> 
+            Connect
+          </h2>
+
+          <h2>
+           <span><IoIosHand /></span>  
+           Issuing
+          </h2>
+
+          <h2>
+           <span><IoIosHand /></span>  
+           Sigma
+          </h2>
+        </div>
+      </DropContainer4>
+      <DropContainer4>
+        <div>
+          <h2>
+            <span><IoMdCheckboxOutline /></span> 
+          Pricing
+          </h2>
+
+          <h2>
+           <span><IoIosPerson /></span> 
+           Enterprise
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Partners
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Documentation
+          </h2>
+
+          <h2>
+           <span><IoIosPlanet /></span>  
+           Blog
+          </h2>
+        </div>
+
+        <div>
+          <h2>
+           <span><IoIosPersonAdd /></span>  
+           About Stripe
+          </h2>
+
+          <h2>
+            <span><IoIosPaper /></span> 
+            Jobs
+          </h2>
+
+          <h2>
+           <span><IoIosHand /></span>  
+           Newsroom
+          </h2>
+
+          <h2>
+           <span><IoIosHand /></span>  
+           Support
+          </h2>
+        </div>
+      </DropContainer4>
+
+      <DropContainer4 alt>
+     
+        <Button alt>Sign in
+        <Arrow
+     width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+      <path d="M0 5h7"></path>
+      <path d="M1 1l4 4-4 4"></path>
+    </Arrow>
+</Button>
+   
+      </DropContainer4>
+    </DropDown4>
+  );
+}
+
 // styles
 
 const DropDown = styled.div`
@@ -242,7 +363,6 @@ const DropDown = styled.div`
   background-color: white;
   z-index: 99;
   border-radius: 10px;
-  width: 55%;
   transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -340,7 +460,6 @@ const DropDown3 = styled(DropDown)`
  padding: 10px;
 `;
 
-
 const DropContainer3 = styled.div`
   background-color: ${(props) => (props.alt ? "#F6F9FC" : "white")};
   width: 100%;
@@ -375,5 +494,96 @@ const DropContainer3 = styled.div`
   span {
     position: absolute;
     left: -27px;
+  }
+`;
+
+const DropDown4 = styled(DropDown)`
+ padding: 25px;
+`;
+
+const DropContainer4 = styled.div`
+  background-color: ${(props) => (props.alt ? "#F6F9FC" : "white")};
+  width: 100%;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  padding: 27px 0px;
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-size: 0.9rem;
+    color: grey;
+  }
+  h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 12px;
+  }
+  h3 {
+    font-size: 0.9rem;
+    color: grey;
+    font-weight: 400;
+    padding-top: 15px;
+    position: absolute;
+    top: -40px;
+  }
+  div {
+    display: inline-block;
+    width: 50%;
+    transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    position: relative;
+  }
+  span {
+    
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+
+
+const Button = styled.button`
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  opacity: 1;
+  text-align: center;
+  background-color: purple;
+  transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+   &:hover {
+     opacity: 0.6;
+   }
+`;
+
+const Arrow = styled.svg`
+  position: relative;
+  top: 1px;
+  margin-left: 8px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  path:first-child {
+    opacity: 0;
+  }
+  path:nth-child(2) {
+    transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  ${Button}:hover & {
+    path:first-child {
+      opacity: 1;
+    }
+    path:nth-child(2) {
+      transform: translateX(3px);
+    }
   }
 `;

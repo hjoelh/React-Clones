@@ -55,6 +55,9 @@ const Button = styled.button`
 const TextWrapper = styled.div`
   padding-top: 7em;
   max-width: 60%;
+  @media (max-width: 599px) {
+    max-width: 100%;
+  }
 `;
 
 const H1 = styled.h1`
@@ -66,6 +69,11 @@ const H1 = styled.h1`
   @media (max-width: 1024px) {
     font-size: 8vw;
   }
+  @media (max-width: 599px) {
+    font-size: 12vw;
+  }
+  
+  
 `;
 
 const Text = styled.p`
@@ -78,6 +86,11 @@ const Text = styled.p`
   @media (max-width: 1000px) {
     padding-top: 19%;
   }
+  @media (max-width: 599px) {
+    width: 100%;
+    padding-top: 7%;
+  }
+
 `;
 
 const ImgWrap = styled.img`
@@ -85,6 +98,9 @@ const ImgWrap = styled.img`
   height: 620px;
   left: 62%;
   top: 25px;
+  @media (max-width: 599px) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`

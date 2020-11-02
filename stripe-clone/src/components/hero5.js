@@ -26,6 +26,7 @@ export default function Hero5() {
           <Border/> 
           <Border/> 
           <Border/> 
+          
           </BorderWrap>
 
             <TextBox>
@@ -92,6 +93,9 @@ const H2 = styled.h2`
   font-size: 2.3rem;
   font-weight: 500;
   color: white;
+  @media (max-width: 800px) {
+    max-width: 80%;
+  }
 `;
 
 const Text = styled.p`
@@ -125,17 +129,28 @@ const TextSmall = styled.p`
 const TextBox = styled.div`
   position: relative;
   width: 25%;
+  @media (max-width: 599px) {
+    width: 100%;
+    padding-bottom: 25px;
+  }
 `;
 
 const TextBoxContainer = styled.div`
   margin: 50px 0;
   width: 100%;
   display: flex;
+  flex-direction: row;
   position: relative;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroText = styled.div`
   max-width: 40%;
+  @media (max-width: 800px) {
+    max-width: 100%;
+  }
 `;
 
 const Img = styled.img`
@@ -167,13 +182,21 @@ const Border = styled.div`
   border-left: 1px solid #00d4ff;
   height: 20px;
   width: 25%;
+  @media (max-width: 599px) {
+    background: red;
+    width: 100%;
+  }
 `
 const BorderWrap = styled.div`
   display: flex;
+  flex-direction: row;
   top: 5px;
   left: -16px;
   height: 23px;
   width: 100%;
   position: absolute;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 `
 

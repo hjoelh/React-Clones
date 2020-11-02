@@ -18,8 +18,9 @@ const Rainbow = styled.div`
   top: -25px;
   background: linear-gradient(90deg, #00b7ff 0%, #ff5e00 50%, #9000ff 100%);
   background-size: 150% 150%;
-  width: 100%;
+  width: 100vw;
   height: 1000px;
+  left: 0;
   /* https://bennettfeely.com/clippy/ */
   clip-path: polygon(0 1%, 100% 0%, 100% 27%, 0 49.5%);
   z-index: -1;

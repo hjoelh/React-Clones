@@ -1,56 +1,75 @@
 import React from "react";
 import styled from "styled-components";
-import { DropDownMenu1, DropDownMenu2, DropDownMenu3 } from "./dropDown";
+import { DropDownMenu1, DropDownMenu2, DropDownMenu3, DropDownMenuMini } from "./dropDown";
 import { StripeLogo, Arrow_SVG } from "./SVGs";
 import { IconContext } from "react-icons";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Header() {
   return (
-    <IconContext.Provider value={{size: '1.5em', color: '#87ADD2'}}>
-    <Container>
-      <StripeLogo />
-      <Nav>
+    <IconContext.Provider value={{ size: "1.5em", color: "#87ADD2" }}>
+      <Container>
+        <StripeLogo />
+        <Nav>
+          <NavItem>
+            <NavLink>Products</NavLink>
+            <DropDownContainer>
+              <DropDownMenu1 />
+            </DropDownContainer>
+          </NavItem>
 
-        <NavItem>
-          <NavLink>Products</NavLink>
-          <DropDownContainer>
-            <DropDownMenu1 />
-          </DropDownContainer>
-        </NavItem>
+          <NavItem>
+            <DropDownContainer>
+              <DropDownMenu2 />
+            </DropDownContainer>
+            <NavLink>Developers</NavLink>
+          </NavItem>
 
-        <NavItem>
-          <DropDownContainer>
-            <DropDownMenu2 />
-          </DropDownContainer>
-          <NavLink>Developers</NavLink>
-        </NavItem>
+          <NavItem>
+            <DropDownContainer>
+              <DropDownMenu3 />
+            </DropDownContainer>
+            <NavLink>Company </NavLink>
+          </NavItem>
 
-        <NavItem>
-          <DropDownContainer>
-            <DropDownMenu3 />
-          </DropDownContainer>
-          <NavLink>Company </NavLink>
-        </NavItem>
+          <NavLink alt>Pricing </NavLink>
+        </Nav>
 
-        <NavLink alt>Pricing </NavLink>
-      </Nav>
-      <Button>
-        Sign in
-      
-      <Arrow width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+        <ButtonWrap>
+          <Button>
+            <ButtonText>Sign in</ButtonText>
+            <Arrow
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              aria-hidden="true"
+            >
               <path d="M0 5h7"></path>
-              <path d="M1 1l4 4-4 4"></path> 
-        </Arrow>
+              <path d="M1 1l4 4-4 4"></path>
+            </Arrow>
 
-      </Button>
-     
-    </Container>
-     </IconContext.Provider>
+            <BurgerWrap>
+              <IconContext.Provider value={{ size: "1.2em", color: "white" }}>
+                <GiHamburgerMenu />
+              </IconContext.Provider>
+            </BurgerWrap>
+          </Button>
+          <DropDownContainer>
+            <DropDownMenuMini />
+          </DropDownContainer>
+        </ButtonWrap>
+
+      </Container>
+    </IconContext.Provider>
   );
 }
 
 // styles
+const NavItem = styled.li`
+  list-style: none;
+  display: inline-block;
+  padding: 25px 0;
+`;
 
 const NavLink = styled.button`
   color: white;
@@ -63,18 +82,6 @@ const NavLink = styled.button`
   &:hover {
     opacity: 0.5;
   }
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 7px 16px;
-  position: relative;
 `;
 
 const Button = styled.button`
@@ -93,7 +100,29 @@ const Button = styled.button`
   }
 `;
 
+const ButtonWrap = styled.div`
+  background: transparent;
+`;
+
 const Nav = styled.nav`
+  @media (max-width: 750px) {
+    display: none;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 7px 16px;
+  position: relative;
+  @media (max-width: 750px) {
+    padding: 25px 16px;
+  }
 `;
 
 const Arrow = styled.svg`
@@ -119,29 +148,53 @@ const Arrow = styled.svg`
       transform: translateX(3px);
     }
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
-const NavItem = styled.li`
-  list-style: none;
-  display: inline-block;
-  padding: 25px 0;
+const BurgerWrap = styled.div`
+  display: none;
+  @media (max-width: 750px) {
+    display: inline-block;
+  }
 `;
 
 const DropDownContainer = styled.div`
   position: absolute;
   top: 75px;
-  left: 210px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 65%;
   z-index: 100;
   opacity: 0;
-  width: 100%;
+
   transition: 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
   pointer-events: none;
+
   ${NavItem}:hover & {
     opacity: 1;
     pointer-events: all;
   }
+
   &:hover {
     opacity: 1;
     pointer-events: all;
+  }
+
+  @media (max-width: 750px) {
+    ${ButtonWrap}:hover & {
+      opacity: 1;
+      pointer-events: all;
+    }
+    width: 85%;
+  }
+`;
+
+const ButtonText = styled.p`
+  display: inline-block;
+  @media (max-width: 750px) {
+    display: none;
   }
 `;

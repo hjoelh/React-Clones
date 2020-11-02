@@ -132,6 +132,11 @@ const Text = styled.p`
   span {
     color: #635bff;
   }
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+  
 `;
 
 const Container = styled.div`
@@ -143,6 +148,11 @@ const Container = styled.div`
   flex-direction: row;
   width: 100%;
   padding: 0 16px;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    margin-top: 60px;
+  }
 `;
 
 const H2 = styled.h2`
@@ -166,17 +176,31 @@ const TextSmall = styled.p`
 const TextBox = styled.div`
   width: 50%;
   padding: 45px 0px;
-  position: relative;
+  position: relative;  
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 const TextBoxContainer = styled.div`
   display: flex;
+
+  @media (max-width: 650px) {
+    flex-direction: column
+  }
 `;
 
 const Section = styled.div`
   padding: 100px 0;
   width: 50%;
   position: relative;
+
+  @media (max-width: 650px) {
+    width: 100%;
+    padding: 30px 0;
+  }
+  
 `;
 
 const Border = styled.div`

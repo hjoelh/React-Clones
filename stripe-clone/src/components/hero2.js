@@ -27,7 +27,7 @@ export default function Hero2() {
             </span>{" "}
             and everything in between.
           </Text>
-          <Text2>
+          <Text alt>
             We also help companies{" "}
             <span>
               {" "}
@@ -35,7 +35,7 @@ export default function Hero2() {
               financing, manage business spend,{" "}
             </span>{" "}
             and much more.
-          </Text2>
+          </Text>
         </TextWrap>
 
         <Button>Start with payments 
@@ -105,7 +105,7 @@ export default function Hero2() {
 // styles
 
 const Text = styled.p`
-  padding: 35px 0;
+  padding: ${props => props.alt ? '35px 16px' : '35px 0px'};
   line-height: 29px;
   letter-spacing: 0.5px;
   font-size: 1.1rem;
@@ -119,11 +119,12 @@ const Text = styled.p`
       color: black;
     }
   }
+  @media (max-width: 599px) {
+    padding: 35px 0px;
+  }
 `;
 
-const Text2 = styled(Text)`
-  padding: 35px 16px;
-`;
+
 
 const Button = styled.button`
   color: white;
@@ -144,6 +145,9 @@ const H2 = styled.h2`
   font-size: 2.5rem;
   font-weight: 500;
   width: 50%;
+  @media (max-width: 850px) {
+    width: 100%;
+  }
 `;
 
 const ImgWrap = styled.div`
@@ -151,15 +155,26 @@ const ImgWrap = styled.div`
   position: relative;
   max-width: 100%;
   height: 100px;
+  display: flex;  
 `;
 
 const TextWrap = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+
   p {
     padding-right: 90px;
     width: 50%;
+
+    @media (max-width: 599px) {
+    width: 100%;
+    padding-right: 0px;
+  }
+
+  }
+  @media (max-width: 599px) {
+    flex-direction: column;
   }
 `;
 

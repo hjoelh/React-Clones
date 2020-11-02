@@ -136,23 +136,38 @@ const TextSmall = styled.p`
       color: black;
     }
   }
+  @media (max-width: 599px) {
+    width: 100%;
+  }
   
 `;
 
 const TextBox = styled.div`
   position: relative;
   width: 25%;
+  @media (max-width: 599px) {
+    width: 100%;
+    padding-bottom: 75px;
+  }
 `;
 
 const TextBoxContainer = styled.div`
   padding-top: 75px;
   width: 100%;
   display: flex;
+  flex-direction: row;
   position: relative;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroText = styled.div`
   max-width: 70%;
+  @media (max-width: 599px) {
+    max-width: 100%;
+  }
+ 
 `;
 
 const Img = styled.img`
@@ -183,6 +198,9 @@ const BorderWrap = styled.div`
   height: 23px;
   width: 100%;
   position: absolute;
+  @media (max-width: 599px) {
+    display: none;
+  }
 `
 
 const IconWrapper = styled.div`
