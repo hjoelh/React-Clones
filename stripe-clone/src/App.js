@@ -1,6 +1,6 @@
 import React from "react";
 import Companies from "./components/2_HeroMain/Companies";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.js";
 import BackgroundGrid from "./components/Misc/Grid";
 import Header from "./components/1_Header/Header";
 import Hero from "./components/2_HeroMain/Hero";

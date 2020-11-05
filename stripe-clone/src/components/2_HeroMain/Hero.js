@@ -17,17 +17,13 @@ export default function Hero() {
             payouts, and manage their businesses online.
           </Text>
 
-          <Button 
-            content="Start now" 
-            color="white" 
-            background="black" />
-            
+          <Button content="Start now" color="white" background="black" />
+
           <Button
             content="Contact sales"
             color="black"
             background="transparent"
           />
-          
         </TextWrapper>
         <ImgWrap src={product} alt="product" />
       </Container>
