@@ -1,65 +1,70 @@
 import React from "react";
 import styled from "styled-components";
-import { DropDownMenu1, DropDownMenu2, DropDownMenu3, DropDownMenuMini } from "./dropDown";
-import { StripeLogo, Arrow_SVG } from "./SVGs";
+import { StripeLogo} from "../Misc/SVGs";
 import { IconContext } from "react-icons";
 import { GiHamburgerMenu } from "react-icons/gi";
+import DropDown1 from "./Dropdown/DropDown1";
+import DropDown2 from "./Dropdown/DropDown2";
+import DropDown3 from "./Dropdown/DropDown3";
+import DropDownMini from "./Dropdown/DropDownMini";
+
 
 export default function Header() {
   return (
     <IconContext.Provider value={{ size: "1.5em", color: "#87ADD2" }}>
-      <Container>
-        <StripeLogo />
-        <Nav>
-          <NavItem>
-            <NavLink>Products</NavLink>
+      <ContainerWrap>
+        <Container>
+          <StripeLogo color="white" />
+          <Nav>
+            <NavItem>
+              <NavLink>Products</NavLink>
+              <DropDownContainer>
+                <DropDown1 />
+              </DropDownContainer>
+            </NavItem>
+
+            <NavItem>
+              <DropDownContainer>
+                <DropDown2 />
+              </DropDownContainer>
+              <NavLink>Developers</NavLink>
+            </NavItem>
+
+            <NavItem>
+              <DropDownContainer>
+                <DropDown3 />
+              </DropDownContainer>
+              <NavLink>Company </NavLink>
+            </NavItem>
+
+            <NavLink alt>Pricing </NavLink>
+          </Nav>
+
+          <ButtonWrap>
+            <Button>
+              <ButtonText>Sign in</ButtonText>
+              <Arrow
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                aria-hidden="true"
+              >
+                <path d="M0 5h7"></path>
+                <path d="M1 1l4 4-4 4"></path>
+              </Arrow>
+
+              <BurgerWrap>
+                <IconContext.Provider value={{ size: "1.2em", color: "white" }}>
+                  <GiHamburgerMenu />
+                </IconContext.Provider>
+              </BurgerWrap>
+            </Button>
             <DropDownContainer>
-              <DropDownMenu1 />
+              <DropDownMini/>
             </DropDownContainer>
-          </NavItem>
-
-          <NavItem>
-            <DropDownContainer>
-              <DropDownMenu2 />
-            </DropDownContainer>
-            <NavLink>Developers</NavLink>
-          </NavItem>
-
-          <NavItem>
-            <DropDownContainer>
-              <DropDownMenu3 />
-            </DropDownContainer>
-            <NavLink>Company </NavLink>
-          </NavItem>
-
-          <NavLink alt>Pricing </NavLink>
-        </Nav>
-
-        <ButtonWrap>
-          <Button>
-            <ButtonText>Sign in</ButtonText>
-            <Arrow
-              width="10"
-              height="10"
-              viewBox="0 0 10 10"
-              aria-hidden="true"
-            >
-              <path d="M0 5h7"></path>
-              <path d="M1 1l4 4-4 4"></path>
-            </Arrow>
-
-            <BurgerWrap>
-              <IconContext.Provider value={{ size: "1.2em", color: "white" }}>
-                <GiHamburgerMenu />
-              </IconContext.Provider>
-            </BurgerWrap>
-          </Button>
-          <DropDownContainer>
-            <DropDownMenuMini />
-          </DropDownContainer>
-        </ButtonWrap>
-
-      </Container>
+          </ButtonWrap>
+        </Container>
+      </ContainerWrap>
     </IconContext.Provider>
   );
 }
@@ -125,6 +130,10 @@ const Container = styled.div`
   }
 `;
 
+const ContainerWrap = styled.div`
+  margin: 0 16px;
+`;
+
 const Arrow = styled.svg`
   position: relative;
   top: 1px;
@@ -187,8 +196,9 @@ const DropDownContainer = styled.div`
     ${ButtonWrap}:hover & {
       opacity: 1;
       pointer-events: all;
+      top: 20px;
     }
-    width: 85%;
+    width: 91%;
   }
 `;
 

@@ -4,6 +4,7 @@ import {FaAtom, FaAngleDoubleRight, FaIcicles, FaLock} from 'react-icons/fa'
 
 export default function Hero4() {
   return (
+    <ContainerWrap> 
       <Container>
         <HeroText>
           <Text>
@@ -18,20 +19,14 @@ export default function Hero4() {
 
           <TextBoxContainer>
 
-          <BorderWrap>
-          <Border/> 
-          <Border/> 
-          <Border/> 
-          <Border/> 
-          </BorderWrap>
-
-
             <TextBox>
               <IconWrapper>
                 <FaAtom/>
               </IconWrapper>
 
-                <TextSmall title>Close to the metal</TextSmall>
+                <TextSmall title>Close to the metal
+                <LineBorder />
+                </TextSmall>
               <TextSmall>
               From <span>direct integrations</span> with card networks and banks to checkout flows in the browser, we operate on and optimize at every level of the financial stack.
               </TextSmall>
@@ -42,7 +37,7 @@ export default function Hero4() {
             <IconWrapper>
             <FaAngleDoubleRight/>
             </IconWrapper>
-              <TextSmall title>Fastest-improving platform</TextSmall>
+              <TextSmall title>Fastest-improving platform  <LineBorder /></TextSmall>
               <TextSmall>
               We release <span>hundreds of features</span> and improvements each year to help you stay ahead of industry shifts. (On average, we deploy our production API 16x per day.)
               </TextSmall>
@@ -54,7 +49,7 @@ export default function Hero4() {
             <IconWrapper>
             <FaLock/>
             </IconWrapper>
-              <TextSmall title>Battle-tested reliability</TextSmall>
+              <TextSmall title>Battle-tested reliability   <LineBorder /></TextSmall>
               <TextSmall>
              Our systems operate with <span>99.9%+</span> uptime and are highly scalable and redundant. Stripe is certified to the highest compliance standards.
               </TextSmall>
@@ -66,7 +61,7 @@ export default function Hero4() {
             <IconWrapper>
             <FaIcicles/>
             </IconWrapper>
-              <TextSmall title>Intelligent optimizations</TextSmall>
+              <TextSmall title>Intelligent optimizations   <LineBorder /></TextSmall>
               <TextSmall>
              Our machine learning models train on <span>billions</span> of data points and help increase revenue across conversion, fraud, revenue recovery, and more.
               </TextSmall>
@@ -81,6 +76,7 @@ export default function Hero4() {
     
       
       </Container>
+      </ContainerWrap>
   );
 };
 
@@ -99,8 +95,9 @@ const Button = styled.button`
 
 const H2 = styled.h2`
   margin: 25px 0;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 500;
+  letter-spacing: -0.1px;
   color: black;
 `;
 
@@ -128,6 +125,7 @@ const TextSmall = styled.p`
   font-weight: ${(props) => (props.title ? "500" : "normal")};
   line-height: ${(props) => (props.title ? "" : "160%")};
   padding-bottom: 12px;
+  position: relative;
   span {
     color: #635bff;
     font-weight: 500;
@@ -145,6 +143,7 @@ const TextSmall = styled.p`
 const TextBox = styled.div`
   position: relative;
   width: 25%;
+  padding: 0 16px;
   @media (max-width: 599px) {
     width: 100%;
     padding-bottom: 75px;
@@ -164,6 +163,7 @@ const TextBoxContainer = styled.div`
 
 const HeroText = styled.div`
   max-width: 70%;
+  padding: 0 16px;
   @media (max-width: 599px) {
     max-width: 100%;
   }
@@ -179,31 +179,29 @@ const Img = styled.img`
 `;
 
 const Container = styled.div`
-  padding: 125px 16px;
+  padding: 110px 0px;
   position: relative;
   max-width: 1080px;
   margin: 0 auto;
   color: #00d4ff;
+  @media (max-width: 599px) {
+    padding: 90px 0px;
+  }
 `;
 
-
-const Border = styled.div`
-  border-left: 1px solid #635bff;
-  height: 20px;
-  width: 25%;
-`
-const BorderWrap = styled.div`
-  display: flex;
-  left: -16px;
-  height: 23px;
-  width: 100%;
-  position: absolute;
-  @media (max-width: 599px) {
-    display: none;
-  }
+const ContainerWrap = styled.div`
+  margin: 0 16px;
 `
 
 const IconWrapper = styled.div`
   position: absolute;
   top: -45px;
+`
+
+const LineBorder = styled.div`
+ position: absolute;
+ border-left: 0.5px solid #635bff;
+ top: 2px;
+ left: -16px;
+ height: 50%;
 `

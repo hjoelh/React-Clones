@@ -1,30 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  margin: 0 auto;
-  pointer-events: none;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  max-width: 1080px;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-`;
-
-const Column = styled.div`
-  width: 25%;
-  border: 0.5px dashed hsla(236, 3%, 78%, 0.2);
-  border-collapse: collapse;
-`;
-
-export default function Grid() {
+export default function BackgroundGrid() {
   return (
     <Wrapper>
       <Container>
@@ -35,6 +12,32 @@ export default function Grid() {
       </Container>
     </Wrapper>
   );
-};
+}
 
+//styles
 
+const Wrapper = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 1080px;
+  height: 100%;
+  width: 100%;
+  margin: 0 16px;
+`;
+
+const Column = styled.div`
+  width: 25%;
+  border: 1px dashed hsla(236, 3%, 78%, 0.1);
+  border-collapse: collapse;
+`;

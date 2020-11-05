@@ -1,23 +1,24 @@
 import React from "react";
-import Companies from "./components/companies";
-import Footer from "./components/footer";
-import BackgroundGrid from "./components/BackgroundGrid";
-import Header from "./components/header";
-import Hero from "./components/hero";
-import Hero2 from "./components/hero2";
-import Hero3 from "./components/hero3";
-import Hero4 from "./components/hero4";
-import Hero5 from "./components/hero5";
-import Hero6 from "./components/hero6";
-import Shape from "./components/shape";
+import Companies from "./components/2_HeroMain/Companies";
+import Footer from "./components/Footer";
+import BackgroundGrid from "./components/Misc/Grid";
+import Header from "./components/1_Header/Header";
+import Hero from "./components/2_HeroMain/Hero";
+import Hero2 from "./components/3_Heros/Hero2";
+import Hero3 from "./components/3_Heros/Hero3";
+import Hero4 from "./components/3_Heros/Hero4";
+import Hero5 from "./components/3_Heros/Hero5";
+import Hero6 from "./components/3_Heros/Hero6";
+import HeaderBackground from "./components/1_Header/headerBackground";
 import { IconContext } from "react-icons";
+import styled from "styled-components";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <MainApp>
       <IconContext.Provider value={{ size: "1.9em" }}>
         <BackgroundGrid />
-        <Shape />
+        <HeaderBackground />
         <Header />
         <Hero />
         <Companies />
@@ -28,8 +29,11 @@ function App() {
         <Hero6 />
       </IconContext.Provider>
       <Footer />
-    </div>
+    </MainApp>
   );
 }
 
-export default App;
+const MainApp = styled.div`
+  position: relative;
+  overflow: hidden;
+`;

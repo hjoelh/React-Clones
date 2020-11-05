@@ -1,10 +1,11 @@
 import React from "react";
-import globe from "../images/globe.png";
+import globe from "../../images/globe.png";
 import styled from "styled-components";
 
 export default function Hero5() {
   return (
     <Background>
+    <ContainerWrap> 
       <Container>
         <HeroText>
           <Text>
@@ -21,16 +22,8 @@ export default function Hero5() {
 
           <TextBoxContainer>
 
-          <BorderWrap>
-          <Border/> 
-          <Border/> 
-          <Border/> 
-          <Border/> 
-          
-          </BorderWrap>
-
             <TextBox>
-                <TextSmall title>250M+</TextSmall>
+                <TextSmall title>250M+ <LineBorder /></TextSmall>
               <TextSmall>
               API requests per day, peaking at 13,000 requests a second. 
               </TextSmall>
@@ -38,7 +31,7 @@ export default function Hero5() {
 
         
             <TextBox>
-              <TextSmall title>90%</TextSmall>
+              <TextSmall title>90%<LineBorder /></TextSmall>
               <TextSmall>
               of U.S. adults have bought from businesses using Stripe. 
               </TextSmall>
@@ -47,7 +40,7 @@ export default function Hero5() {
       
             
             <TextBox>
-              <TextSmall title>135+</TextSmall>
+              <TextSmall title>135+<LineBorder /></TextSmall>
               <TextSmall>
               currencies and payment methods supported. 
               </TextSmall>
@@ -56,7 +49,7 @@ export default function Hero5() {
     
 
             <TextBox>
-              <TextSmall title>35+</TextSmall>
+              <TextSmall title>35+<LineBorder /></TextSmall>
               <TextSmall>
               countries with local acquiring, optimizing acceptance rates. 
               </TextSmall>
@@ -71,6 +64,7 @@ export default function Hero5() {
     
       
       </Container>
+      </ContainerWrap>
     </Background>
   );
 };
@@ -90,11 +84,12 @@ const Button = styled.button`
 
 const H2 = styled.h2`
   margin: 25px 0;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 500;
+  letter-spacing: -0.1px;
   color: white;
   @media (max-width: 800px) {
-    max-width: 80%;
+    max-width: 100%;
   }
 `;
 
@@ -129,6 +124,7 @@ const TextSmall = styled.p`
 const TextBox = styled.div`
   position: relative;
   width: 25%;
+  padding-left: 16px;
   @media (max-width: 599px) {
     width: 100%;
     padding-bottom: 25px;
@@ -148,6 +144,7 @@ const TextBoxContainer = styled.div`
 
 const HeroText = styled.div`
   max-width: 40%;
+  padding: 0 16px;
   @media (max-width: 800px) {
     max-width: 100%;
   }
@@ -162,41 +159,36 @@ const Img = styled.img`
 `;
 
 const Container = styled.div`
-  padding-top: 250px;
-  padding-bottom: 125px;
+  padding-top: 175px;
+  padding-bottom: 75px;
   position: relative;
   max-width: 1080px;
   margin: 0 auto;
   color: #00d4ff;
-  padding-left: 16px;
-  padding-right: 16px;
+  @media (max-width: 800px) {
+    padding-top: 125px;
+    padding-bottom: 5px;
+  }
 `;
+
+const ContainerWrap = styled.div`
+  margin: 0 16px;
+`
 
 const Background = styled.div`
   width: 100%;
   background-color: #0a2540;
   clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  @media (max-width: 800px) {
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+  }
 `;
 
-const Border = styled.div`
-  border-left: 1px solid #00d4ff;
-  height: 20px;
-  width: 25%;
-  @media (max-width: 599px) {
-    background: red;
-    width: 100%;
-  }
-`
-const BorderWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  top: 5px;
-  left: -16px;
-  height: 23px;
-  width: 100%;
-  position: absolute;
-  @media (max-width: 599px) {
-    flex-direction: column;
-  }
+const LineBorder = styled.div`
+ position: absolute;
+ border-left: 0.5px solid #00d4ff;
+ top: 4px;
+ left: 0px;
+ height: 20px;
 `
 
